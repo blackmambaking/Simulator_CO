@@ -102,64 +102,131 @@ g = open("binary.txt", "x")
 #dealing each input one by one
 for line in content_list:
     listA = line.split() 
+    #addition
     if listA [0] == "add":  
         re1 = returnRegister(listA[1])
         re2 = returnRegister(listA[2])
         re3 = returnRegister(listA[3])
         returnCode(Addition, re1, re2, re3)
+    #subtraction
     if listA [0] == "sub":  
         re1 = returnRegister(listA[1])
         re2 = returnRegister(listA[2])
         re3 = returnRegister(listA[3])
         returnCode(Addition, re1, re2, re3)
 
-
+    #moving value
     if listA [0] == "mov":  
         re1 = returnRegister(listA[1])
         re2 = returnRegister(listA[2])
         re3 = returnRegister(listA[3])
         returnCode(Addition, re1, re2, re3)
-
+    #load value
     if listA [0] == "ld":  
         re1 = returnRegister(listA[1])
         
         returnCode(Addition, re1, re2, re3)
-    if listA [0] == "add":  
+    
+    #store
+    if listA [0] == "st":  
         re1 = returnRegister(listA[1])
         re2 = returnRegister(listA[2])
         re3 = returnRegister(listA[3])
         returnCode(Addition, re1, re2, re3)
-    if listA [0] == "add":  
+    
+    #multiply
+    if listA [0] == "mul":  
         re1 = returnRegister(listA[1])
         re2 = returnRegister(listA[2])
         re3 = returnRegister(listA[3])
         returnCode(Addition, re1, re2, re3)
-    if listA [0] == "add":  
+
+    #divide
+    if listA [0] == "div":  
         re1 = returnRegister(listA[1])
         re2 = returnRegister(listA[2])
         re3 = returnRegister(listA[3])
         returnCode(Addition, re1, re2, re3)
-    if listA [0] == "add":  
+
+    #rightShift
+    if listA [0] == "rs":  
         re1 = returnRegister(listA[1])
         re2 = returnRegister(listA[2])
         re3 = returnRegister(listA[3])
         returnCode(Addition, re1, re2, re3)
-    if listA [0] == "add":  
+
+    #leftShift
+    if listA [0] == "ls":  
         re1 = returnRegister(listA[1])
         re2 = returnRegister(listA[2])
         re3 = returnRegister(listA[3])
         returnCode(Addition, re1, re2, re3)
-    if listA [0] == "add":  
+
+    #exclusive OR
+    if listA [0] == "xor":  
         re1 = returnRegister(listA[1])
         re2 = returnRegister(listA[2])
         re3 = returnRegister(listA[3])
         returnCode(Addition, re1, re2, re3)
-    if listA [0] == "add":  
+
+    #OR
+    if listA [0] == "or":  
         re1 = returnRegister(listA[1])
         re2 = returnRegister(listA[2])
         re3 = returnRegister(listA[3])
         returnCode(Addition, re1, re2, re3)
-    if listA [0] == "add":  
+
+    #AND
+    if listA [0] == "and":  
+        re1 = returnRegister(listA[1])
+        re2 = returnRegister(listA[2])
+        re3 = returnRegister(listA[3])
+        returnCode(Addition, re1, re2, re3)
+
+    #invert
+    if listA [0] == "not":  
+        re1 = returnRegister(listA[1])
+        re2 = returnRegister(listA[2])
+        re3 = returnRegister(listA[3])
+        returnCode(Addition, re1, re2, re3)
+
+    #compare
+    if listA [0] == "cmp":  
+        re1 = returnRegister(listA[1])
+        re2 = returnRegister(listA[2])
+        re3 = returnRegister(listA[3])
+        returnCode(Addition, re1, re2, re3)
+
+    #unconditional jump
+    if listA [0] == "jmp":  
+        re1 = returnRegister(listA[1])
+        re2 = returnRegister(listA[2])
+        re3 = returnRegister(listA[3])
+        returnCode(Addition, re1, re2, re3)
+
+    #jump if less than
+    if listA [0] == "jlt":  
+        re1 = returnRegister(listA[1])
+        re2 = returnRegister(listA[2])
+        re3 = returnRegister(listA[3])
+        returnCode(Addition, re1, re2, re3)
+    
+    # jump if greater than 
+    if listA [0] == "jgt":  
+        re1 = returnRegister(listA[1])
+        re2 = returnRegister(listA[2])
+        re3 = returnRegister(listA[3])
+        returnCode(Addition, re1, re2, re3)
+    
+    #jump if equal
+    if listA [0] == "je":  
+        re1 = returnRegister(listA[1])
+        re2 = returnRegister(listA[2])
+        re3 = returnRegister(listA[3])
+        returnCode(Addition, re1, re2, re3)
+
+    #halt
+    if listA [0] == "hlt":  
         re1 = returnRegister(listA[1])
         re2 = returnRegister(listA[2])
         re3 = returnRegister(listA[3])
