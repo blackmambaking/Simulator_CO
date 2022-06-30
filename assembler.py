@@ -13,6 +13,9 @@ def returnRegister(reg):
         return "101"
     if reg == "R6":
         return "110"
+
+# hardcoding codes
+
 R0 = "000"
 R1 = "001"
 R2 = "010"
@@ -41,6 +44,8 @@ JumpIfLessThan = "01100"
 JumpIfGreaterThan = "01101"
 JumpIfEqual = "01111"
 Halt = "01010"
+
+#returning binary code for each line
 
 def returnCode(opCode, reg1, reg2, reg3, mem, imm ):
     final = ""
@@ -88,11 +93,13 @@ def returnCode(opCode, reg1, reg2, reg3, mem, imm ):
     return final
 
 
+#reading input line by line
 
 with open("data_file.txt") as f:
     content_list = f.readlines()
 g = open("binary.txt", "x")
 
+#dealing each input one by one
 for line in content_list:
     listA = line.split() 
     if listA [0] == "add":  
@@ -105,11 +112,14 @@ for line in content_list:
         re2 = returnRegister(listA[2])
         re3 = returnRegister(listA[3])
         returnCode(Addition, re1, re2, re3)
+
+
     if listA [0] == "mov":  
         re1 = returnRegister(listA[1])
         re2 = returnRegister(listA[2])
         re3 = returnRegister(listA[3])
         returnCode(Addition, re1, re2, re3)
+
     if listA [0] == "ld":  
         re1 = returnRegister(listA[1])
         
