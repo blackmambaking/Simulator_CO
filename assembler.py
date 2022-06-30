@@ -1,3 +1,6 @@
+from operator import xor
+
+
 def returnRegister(reg):
     if reg == "R0":
         return "000"
@@ -13,7 +16,13 @@ def returnRegister(reg):
         return "101"
     if reg == "R6":
         return "110"
-
+def decimalToBinary(decimal):
+    out = []
+    while(decimal>0):
+        out.append(decimal%2)
+        decimal = decimal//2
+    
+    return out[::-1]
 # hardcoding codes
 
 R0 = "000"
@@ -139,63 +148,68 @@ for line in content_list:
         re1 = returnRegister(listA[1])
         re2 = returnRegister(listA[2])
         re3 = returnRegister(listA[3])
-        returnCode(Addition, re1, re2, re3)
+        returnCode(Multiply, re1, re2, re3)
 
     #divide
     if listA [0] == "div":  
         re1 = returnRegister(listA[1])
         re2 = returnRegister(listA[2])
-        re3 = returnRegister(listA[3])
-        returnCode(Addition, re1, re2, re3)
+        returnCode(Divide, re1, re2)
 
     #rightShift
     if listA [0] == "rs":  
         re1 = returnRegister(listA[1])
-        re2 = returnRegister(listA[2])
-        re3 = returnRegister(listA[3])
-        returnCode(Addition, re1, re2, re3)
+        val = listA[2]
+        val = val[1:]
+        num = int(val)
+        bi = decimalToBinary(num)
+
+        returnCode(RightShift, re1, bi)
 
     #leftShift
     if listA [0] == "ls":  
         re1 = returnRegister(listA[1])
-        re2 = returnRegister(listA[2])
-        re3 = returnRegister(listA[3])
-        returnCode(Addition, re1, re2, re3)
+        val = listA[2]
+        val = val[1:]
+        num = int(val)
+        bi = decimalToBinary(num)
+
+        returnCode(LeftShift, re1, bi)
 
     #exclusive OR
     if listA [0] == "xor":  
         re1 = returnRegister(listA[1])
         re2 = returnRegister(listA[2])
         re3 = returnRegister(listA[3])
-        returnCode(Addition, re1, re2, re3)
+        returnCode(ExclusiveOR, re1, re2, re3)
+
 
     #OR
     if listA [0] == "or":  
         re1 = returnRegister(listA[1])
         re2 = returnRegister(listA[2])
         re3 = returnRegister(listA[3])
-        returnCode(Addition, re1, re2, re3)
+        returnCode(Or, re1, re2, re3)
+
 
     #AND
     if listA [0] == "and":  
         re1 = returnRegister(listA[1])
         re2 = returnRegister(listA[2])
         re3 = returnRegister(listA[3])
-        returnCode(Addition, re1, re2, re3)
+        returnCode(And, re1, re2, re3)
 
     #invert
     if listA [0] == "not":  
         re1 = returnRegister(listA[1])
         re2 = returnRegister(listA[2])
-        re3 = returnRegister(listA[3])
-        returnCode(Addition, re1, re2, re3)
+        returnCode(Invert, re1, re2)
 
     #compare
     if listA [0] == "cmp":  
         re1 = returnRegister(listA[1])
         re2 = returnRegister(listA[2])
-        re3 = returnRegister(listA[3])
-        returnCode(Addition, re1, re2, re3)
+        returnCode(Compare, re1, re2)
 
     #unconditional jump
     if listA [0] == "jmp":  
@@ -227,8 +241,5 @@ for line in content_list:
 
     #halt
     if listA [0] == "hlt":  
-        re1 = returnRegister(listA[1])
-        re2 = returnRegister(listA[2])
-        re3 = returnRegister(listA[3])
-        returnCode(Addition, re1, re2, re3)
+        returnCode(Halt)
 
