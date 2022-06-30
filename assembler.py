@@ -1,3 +1,6 @@
+import opcode
+
+
 r0 = "000"
 r1 = "001"
 r2 = "010"
@@ -27,48 +30,48 @@ JumpIfGreaterThan = "01101"
 JumpIfEqual = "01111"
 Halt = "01010"
 
-def returnCode(opCode, reg1, reg2, reg3, mem ):
+def returnCode(opCode, reg1, reg2, reg3, mem, imm ):
     final = ""
     if(opCode == Addition):
-        pass
+        final = opCode +"00"+ reg1+ reg2+ reg3
     elif(opCode == Subtraction):
-        pass
+        final = opCode +"00"+ reg1+ reg2+ reg3
     elif(opCode == MoveImmediate):
         pass
     elif(opCode == MoveRegister):
         pass
     elif(opCode == Load):
-        pass
+        final = opCode + reg1+ mem
     elif(opCode == Store):
-        pass
+        final = opCode + reg1+ mem
     elif(opCode == Multiply):
-        pass
+        final = opCode +"00"+ reg1+ reg2+ reg3
     elif(opCode == Divide):
-        pass
+        final = opCode + "00000" + reg1+ reg2
     elif(opCode == RightShift):
-        pass
+        final = opCode + reg1 + imm
     elif(opCode == LeftShift):
-        pass
+        final = opCode + reg1 + imm
     elif(opCode == ExclusiveOR):
-        pass
+        final = opCode +"00"+ reg1+ reg2+ reg3
     elif(opCode == Or):
-        pass
+        final = opCode +"00"+ reg1+ reg2+ reg3
     elif(opCode == And):
-        pass
+        final = opCode +"00"+ reg1+ reg2+ reg3
     elif(opCode == Invert):
-        pass
+        final = opCode + "00000" + reg1+ reg2
     elif(opCode == Compare):
-        pass
+        final = opCode + "00000" + reg1+ reg2
     elif(opCode == UnconditionalJump):
-        pass
+        final = opCode + "000" + mem
     elif(opCode == JumpIfLessThan):
-        pass
+        final = opCode + "000" + mem
     elif(opCode == JumpIfGreaterThan):
-        pass
+        final = opCode + "000" + mem
     elif(opCode == JumpIfEqual):
-        pass
+        final = opCode + "000" + mem
     elif(opCode == Halt):
-        pass
+        final = opCode + "00000000000"
     
     return final
 
