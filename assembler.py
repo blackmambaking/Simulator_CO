@@ -33,12 +33,59 @@ def returnCode(opCode, reg1, reg2, reg3, mem ):
         pass
     elif(opCode == Subtraction):
         pass
+    elif(opCode == MoveImmediate):
+        pass
+    elif(opCode == MoveRegister):
+        pass
+    elif(opCode == Load):
+        pass
+    elif(opCode == Store):
+        pass
+    elif(opCode == Multiply):
+        pass
+    elif(opCode == Divide):
+        pass
+    elif(opCode == RightShift):
+        pass
+    elif(opCode == LeftShift):
+        pass
+    elif(opCode == ExclusiveOR):
+        pass
+    elif(opCode == Or):
+        pass
+    elif(opCode == And):
+        pass
+    elif(opCode == Invert):
+        pass
+    elif(opCode == Compare):
+        pass
+    elif(opCode == UnconditionalJump):
+        pass
+    elif(opCode == JumpIfLessThan):
+        pass
+    elif(opCode == JumpIfGreaterThan):
+        pass
+    elif(opCode == JumpIfEqual):
+        pass
+    elif(opCode == Halt):
+        pass
     
-
-
     return final
 
+def replace_the_word(input1, input2):
+    f = open("question1_input.txt", "r")
+    content = f.read()
+    q=content.split()
+    strI=""
+    # input1=input("enter the word you want to replace: ")
+    # input2=input("enter the word with which you want to replace given word: ")
+    for i in range(len(q)):
+        if q[i]==input1:
+            q[i]=input2
+        strI = strI + ' ' + q[i]    
 
+    f2 = open("question1_output.txt", "w+")
+    f2.write(strI)
 
 with open("data_file.txt") as f:
     content_list = f.readlines()
