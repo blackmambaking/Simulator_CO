@@ -27,3 +27,19 @@ JumpIfGreaterThan = "01101"
 JumpIfEqual = "01111"
 Halt = "01010"
 
+def returnCode(opCode, reg1, reg2, reg3, mem ):
+    final = ""
+    if(opCode == Addition):
+        pass
+    elif(opCode == Subtraction):
+        pass
+    
+
+
+    return final
+
+
+
+with open("data_file.txt") as f:
+    content_list = f.readlines()
+
