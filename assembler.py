@@ -1,11 +1,25 @@
-
-r0 = "000"
-r1 = "001"
-r2 = "010"
-r3 = "011"
-r4 = "100"
-r5 = "101"
-r6 = "110"
+def returnRegister(reg):
+    if reg == "R0":
+        return "000"
+    if reg == "R1":
+        return "001"
+    if reg == "R2":
+        return "010"
+    if reg == "R3":
+        return "011"
+    if reg == "R4":
+        return "100"
+    if reg == "R5":
+        return "101"
+    if reg == "R6":
+        return "110"
+R0 = "000"
+R1 = "001"
+R2 = "010"
+R3 = "011"
+R4 = "100"
+R5 = "101"
+R6 = "110"
 FLAGS = "111"
 Addition = "10000"
 Subtraction = "10001"
@@ -73,20 +87,7 @@ def returnCode(opCode, reg1, reg2, reg3, mem, imm ):
     
     return final
 
-def replace_the_word(input1, input2):
-    f = open("question1_input.txt", "r")
-    content = f.read()
-    q=content.split()
-    strI=""
-    # input1=input("enter the word you want to replace: ")
-    # input2=input("enter the word with which you want to replace given word: ")
-    for i in range(len(q)):
-        if q[i]==input1:
-            q[i]=input2
-        strI = strI + ' ' + q[i]    
 
-    f2 = open("question1_output.txt", "w+")
-    f2.write(strI)
 
 with open("data_file.txt") as f:
     content_list = f.readlines()
@@ -94,4 +95,63 @@ g = open("binary.txt", "x")
 
 for line in content_list:
     listA = line.split() 
+    if listA [0] == "add":  
+        re1 = returnRegister(listA[1])
+        re2 = returnRegister(listA[2])
+        re3 = returnRegister(listA[3])
+        returnCode(Addition, re1, re2, re3)
+    if listA [0] == "sub":  
+        re1 = returnRegister(listA[1])
+        re2 = returnRegister(listA[2])
+        re3 = returnRegister(listA[3])
+        returnCode(Addition, re1, re2, re3)
+    if listA [0] == "mov":  
+        re1 = returnRegister(listA[1])
+        re2 = returnRegister(listA[2])
+        re3 = returnRegister(listA[3])
+        returnCode(Addition, re1, re2, re3)
+    if listA [0] == "ld":  
+        re1 = returnRegister(listA[1])
+        
+        returnCode(Addition, re1, re2, re3)
+    if listA [0] == "add":  
+        re1 = returnRegister(listA[1])
+        re2 = returnRegister(listA[2])
+        re3 = returnRegister(listA[3])
+        returnCode(Addition, re1, re2, re3)
+    if listA [0] == "add":  
+        re1 = returnRegister(listA[1])
+        re2 = returnRegister(listA[2])
+        re3 = returnRegister(listA[3])
+        returnCode(Addition, re1, re2, re3)
+    if listA [0] == "add":  
+        re1 = returnRegister(listA[1])
+        re2 = returnRegister(listA[2])
+        re3 = returnRegister(listA[3])
+        returnCode(Addition, re1, re2, re3)
+    if listA [0] == "add":  
+        re1 = returnRegister(listA[1])
+        re2 = returnRegister(listA[2])
+        re3 = returnRegister(listA[3])
+        returnCode(Addition, re1, re2, re3)
+    if listA [0] == "add":  
+        re1 = returnRegister(listA[1])
+        re2 = returnRegister(listA[2])
+        re3 = returnRegister(listA[3])
+        returnCode(Addition, re1, re2, re3)
+    if listA [0] == "add":  
+        re1 = returnRegister(listA[1])
+        re2 = returnRegister(listA[2])
+        re3 = returnRegister(listA[3])
+        returnCode(Addition, re1, re2, re3)
+    if listA [0] == "add":  
+        re1 = returnRegister(listA[1])
+        re2 = returnRegister(listA[2])
+        re3 = returnRegister(listA[3])
+        returnCode(Addition, re1, re2, re3)
+    if listA [0] == "add":  
+        re1 = returnRegister(listA[1])
+        re2 = returnRegister(listA[2])
+        re3 = returnRegister(listA[3])
+        returnCode(Addition, re1, re2, re3)
 
