@@ -1,5 +1,3 @@
-import opcode
-
 
 r0 = "000"
 r1 = "001"
@@ -92,4 +90,8 @@ def replace_the_word(input1, input2):
 
 with open("data_file.txt") as f:
     content_list = f.readlines()
+g = open("binary.txt", "x")
+
+for line in content_list:
+    listA = line.split() 
 
